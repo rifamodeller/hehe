@@ -4,13 +4,14 @@ from PyQt5.QtWidgets import QApplication, QWidget
 import sys
 from PyQt5 import uic
 import random
+from UI import Ui_Form
 
 
-class App(QWidget):
+class App(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-        uic.loadUi('111.ui', self)
-        self.pushbutton.clicked.connect(self.circle)
+        self.setupUi(self)
+        self.pushButton.clicked.connect(self.circle)
         self.draw = False
 
     def circle(self):
